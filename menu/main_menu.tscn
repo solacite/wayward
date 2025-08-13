@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cjqj6ibup4oju"]
+[gd_scene load_steps=11 format=3 uid="uid://cjqj6ibup4oju"]
 
 [ext_resource type="Texture2D" uid="uid://d3daswk0736al" path="res://menu/background/wayward_menu1.png" id="1_jc45y"]
 [ext_resource type="Texture2D" uid="uid://bml7h55qhshii" path="res://menu/background/wayward_menu2.png" id="2_s8mfa"]
@@ -45,6 +45,9 @@ _data = {
 &"menu_background": SubResource("Animation_0o4t1")
 }
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s8mfa"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
 [node name="Main Menu" type="Node2D"]
 
 [node name="Background" type="TextureRect" parent="."]
@@ -82,10 +85,12 @@ text = "the seas call your name..."
 
 [node name="Start" type="Button" parent="."]
 offset_left = 475.0
-offset_top = 475.0
+offset_top = 560.0
 offset_right = 663.0
-offset_bottom = 543.0
+offset_bottom = 628.0
+theme_override_colors/font_hover_color = Color(0.675674, 0.709685, 0.777005, 1)
 theme_override_colors/font_color = Color(0.385974, 0.424908, 0.502787, 1)
 theme_override_fonts/font = ExtResource("6_s8mfa")
 theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_s8mfa")
 text = "set sail"
