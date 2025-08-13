@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cjqj6ibup4oju"]
+[gd_scene load_steps=25 format=3 uid="uid://cjqj6ibup4oju"]
 
 [ext_resource type="Texture2D" uid="uid://d3daswk0736al" path="res://menu/background/wayward_menu1.png" id="1_jc45y"]
 [ext_resource type="Texture2D" uid="uid://bml7h55qhshii" path="res://menu/background/wayward_menu2.png" id="2_s8mfa"]
@@ -45,8 +45,83 @@ _data = {
 &"menu_background": SubResource("Animation_0o4t1")
 }
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s8mfa"]
-bg_color = Color(0.6, 0.6, 0.6, 0)
+[sub_resource type="Animation" id="Animation_0tw43"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(350, 137)]
+}
+
+[sub_resource type="Animation" id="Animation_s8mfa"]
+resource_name = "title bob"
+length = 3.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(337, 160), Vector2(337, 150), Vector2(337, 140)]
+}
+
+[sub_resource type="Animation" id="Animation_youj7"]
+resource_name = "subtitle bob"
+length = 3.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(334, 270), Vector2(334, 260), Vector2(334, 250)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_youj7"]
+_data = {
+&"RESET": SubResource("Animation_0tw43"),
+&"subtitle bob": SubResource("Animation_youj7"),
+&"title bob": SubResource("Animation_s8mfa")
+}
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_l5uyn"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8qj3r"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_k5y3h"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_k17ts"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1vfm6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_23ste"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_b06p2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lb3k0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5urqu"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bnl5v"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qkuil"]
 
 [node name="Main Menu" type="Node2D"]
 
@@ -60,6 +135,7 @@ texture = ExtResource("1_jc45y")
 libraries = {
 &"": SubResource("AnimationLibrary_j5v2v")
 }
+autoplay = "menu_background"
 
 [node name="Title" type="Label" parent="."]
 offset_left = 350.0
@@ -72,25 +148,45 @@ theme_override_font_sizes/font_size = 100
 text = "wayward"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Title"]
+libraries = {
+&"": SubResource("AnimationLibrary_youj7")
+}
+autoplay = "title bob"
 
 [node name="Subtitle" type="Label" parent="."]
-offset_left = 339.0
-offset_top = 253.0
-offset_right = 825.0
-offset_bottom = 398.0
+offset_left = 350.0
+offset_top = 137.0
+offset_right = 836.0
+offset_bottom = 282.0
 theme_override_colors/font_color = Color(0.393146, 0.432645, 0.511415, 1)
 theme_override_fonts/font = ExtResource("6_s8mfa")
 theme_override_font_sizes/font_size = 40
 text = "the seas call your name..."
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Subtitle"]
+libraries = {
+&"": SubResource("AnimationLibrary_youj7")
+}
+autoplay = "subtitle bob"
+
 [node name="Start" type="Button" parent="."]
 offset_left = 475.0
-offset_top = 560.0
+offset_top = 574.0
 offset_right = 663.0
-offset_bottom = 628.0
+offset_bottom = 642.0
 theme_override_colors/font_hover_color = Color(0.675674, 0.709685, 0.777005, 1)
 theme_override_colors/font_color = Color(0.385974, 0.424908, 0.502787, 1)
 theme_override_fonts/font = ExtResource("6_s8mfa")
 theme_override_font_sizes/font_size = 40
-theme_override_styles/normal = SubResource("StyleBoxFlat_s8mfa")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_l5uyn")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_8qj3r")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_k5y3h")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_k17ts")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_1vfm6")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_23ste")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_b06p2")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_lb3k0")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_5urqu")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_bnl5v")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_qkuil")
 text = "set sail"
