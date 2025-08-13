@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://cjqj6ibup4oju"]
+[gd_scene load_steps=26 format=3 uid="uid://cjqj6ibup4oju"]
 
 [ext_resource type="Texture2D" uid="uid://d3daswk0736al" path="res://menu/background/wayward_menu1.png" id="1_jc45y"]
 [ext_resource type="Texture2D" uid="uid://bml7h55qhshii" path="res://menu/background/wayward_menu2.png" id="2_s8mfa"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cmofq73uysc6r" path="res://menu/background/wayward_menu4.png" id="4_youj7"]
 [ext_resource type="Texture2D" uid="uid://bl7jfqdvrh6c4" path="res://menu/background/wayward_menu5.png" id="5_l5uyn"]
 [ext_resource type="FontFile" uid="uid://bn2dk54tqe0m5" path="res://fonts/PixelifySans-Regular.ttf" id="6_s8mfa"]
+[ext_resource type="Script" uid="uid://du8scpp2t8pov" path="res://menu/start.gd" id="7_0tw43"]
 
 [sub_resource type="Animation" id="Animation_0k4wn"]
 length = 0.001
@@ -123,7 +124,7 @@ _data = {
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qkuil"]
 
-[node name="Main Menu" type="Node2D"]
+[node name="Main_Menu" type="Node2D"]
 
 [node name="Background" type="TextureRect" parent="."]
 offset_right = 1166.0
@@ -190,3 +191,13 @@ theme_override_styles/pressed = SubResource("StyleBoxEmpty_5urqu")
 theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_bnl5v")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_qkuil")
 text = "set sail"
+script = ExtResource("7_0tw43")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(29.6368, 16.909)
+size_flags_vertical = 4
+mouse_filter = 2
+color = Color(0.129412, 0.14902, 0.192157, 1)
