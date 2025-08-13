@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://bd7a7keq6x0ss"]
+[gd_scene load_steps=7 format=3 uid="uid://bd7a7keq6x0ss"]
 
 [ext_resource type="Script" uid="uid://bfqgnm1qit7fg" path="res://soul_play/soul_play.gd" id="1_osqki"]
 [ext_resource type="FontFile" uid="uid://bn2dk54tqe0m5" path="res://fonts/PixelifySans-Regular.ttf" id="2_osqki"]
@@ -10,6 +10,13 @@ bg_color = Color(0.129412, 0.14902, 0.192157, 1)
 bg_color = Color(0.506224, 0.545972, 0.630359, 1)
 
 [sub_resource type="GDScript" id="GDScript_df4s4"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_df4s4"]
+bg_color = Color(0.28383, 0.318159, 0.39354, 1)
+expand_margin_left = 4.0
+expand_margin_top = 2.0
+expand_margin_right = 4.0
+expand_margin_bottom = 2.0
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_osqki")
@@ -37,4 +44,64 @@ offset_bottom = 517.0
 theme_override_colors/font_color = Color(0.129412, 0.14902, 0.192157, 1)
 theme_override_fonts/font = ExtResource("2_osqki")
 theme_override_font_sizes/font_size = 35
-text = "blah blah!"
+
+[node name="Two Options" type="HBoxContainer" parent="."]
+offset_left = 39.0
+offset_top = 587.0
+offset_right = 1110.0
+offset_bottom = 627.0
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.0
+theme_override_constants/separation = 100
+alignment = 1
+
+[node name="Button1" type="Button" parent="Two Options"]
+custom_minimum_size = Vector2(300, 50)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.686093, 0.71759, 0.783255, 1)
+theme_override_fonts/font = ExtResource("2_osqki")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_df4s4")
+
+[node name="Button2" type="Button" parent="Two Options"]
+custom_minimum_size = Vector2(300, 50)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.686093, 0.71759, 0.783255, 1)
+theme_override_fonts/font = ExtResource("2_osqki")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_df4s4")
+
+[node name="Three Options" type="HBoxContainer" parent="."]
+visible = false
+offset_left = 39.0
+offset_top = 587.0
+offset_right = 1110.0
+offset_bottom = 627.0
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.0
+theme_override_constants/separation = 100
+alignment = 1
+
+[node name="Button1" type="Button" parent="Three Options"]
+custom_minimum_size = Vector2(300, 50)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.686093, 0.71759, 0.783255, 1)
+theme_override_fonts/font = ExtResource("2_osqki")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_df4s4")
+
+[node name="Button2" type="Button" parent="Three Options"]
+custom_minimum_size = Vector2(300, 50)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.686093, 0.71759, 0.783255, 1)
+theme_override_fonts/font = ExtResource("2_osqki")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_df4s4")
+
+[node name="Button3" type="Button" parent="Three Options"]
+custom_minimum_size = Vector2(300, 50)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.686093, 0.71759, 0.783255, 1)
+theme_override_fonts/font = ExtResource("2_osqki")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_df4s4")
