@@ -1,0 +1,91 @@
+[gd_scene load_steps=10 format=3 uid="uid://cjqj6ibup4oju"]
+
+[ext_resource type="Texture2D" uid="uid://d3daswk0736al" path="res://menu/background/wayward_menu1.png" id="1_jc45y"]
+[ext_resource type="Texture2D" uid="uid://bml7h55qhshii" path="res://menu/background/wayward_menu2.png" id="2_s8mfa"]
+[ext_resource type="Texture2D" uid="uid://dvt2qboaitjdk" path="res://menu/background/wayward_menu3.png" id="3_0tw43"]
+[ext_resource type="Texture2D" uid="uid://cmofq73uysc6r" path="res://menu/background/wayward_menu4.png" id="4_youj7"]
+[ext_resource type="Texture2D" uid="uid://bl7jfqdvrh6c4" path="res://menu/background/wayward_menu5.png" id="5_l5uyn"]
+[ext_resource type="FontFile" uid="uid://bn2dk54tqe0m5" path="res://fonts/PixelifySans-Regular.ttf" id="6_s8mfa"]
+
+[sub_resource type="Animation" id="Animation_0k4wn"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("1_jc45y")]
+}
+
+[sub_resource type="Animation" id="Animation_0o4t1"]
+resource_name = "menu_background"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.866667, 1.26667, 1.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("1_jc45y"), ExtResource("2_s8mfa"), ExtResource("3_0tw43"), ExtResource("4_youj7"), ExtResource("5_l5uyn")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_j5v2v"]
+_data = {
+&"RESET": SubResource("Animation_0k4wn"),
+&"menu_background": SubResource("Animation_0o4t1")
+}
+
+[node name="Main Menu" type="Node2D"]
+
+[node name="Background" type="TextureRect" parent="."]
+offset_right = 1166.0
+offset_bottom = 657.0
+size_flags_horizontal = 4
+texture = ExtResource("1_jc45y")
+
+[node name="Wave Cycle" type="AnimationPlayer" parent="Background"]
+libraries = {
+&"": SubResource("AnimationLibrary_j5v2v")
+}
+
+[node name="Title" type="Label" parent="."]
+offset_left = 350.0
+offset_top = 137.0
+offset_right = 799.0
+offset_bottom = 282.0
+theme_override_colors/font_color = Color(0.635548, 0.672457, 0.7455, 1)
+theme_override_fonts/font = ExtResource("6_s8mfa")
+theme_override_font_sizes/font_size = 100
+text = "wayward"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Title"]
+
+[node name="Subtitle" type="Label" parent="."]
+offset_left = 339.0
+offset_top = 253.0
+offset_right = 825.0
+offset_bottom = 398.0
+theme_override_colors/font_color = Color(0.393146, 0.432645, 0.511415, 1)
+theme_override_fonts/font = ExtResource("6_s8mfa")
+theme_override_font_sizes/font_size = 40
+text = "the seas call your name..."
+
+[node name="Start" type="Button" parent="."]
+offset_left = 475.0
+offset_top = 475.0
+offset_right = 663.0
+offset_bottom = 543.0
+theme_override_colors/font_color = Color(0.385974, 0.424908, 0.502787, 1)
+theme_override_fonts/font = ExtResource("6_s8mfa")
+theme_override_font_sizes/font_size = 40
+text = "set sail"
