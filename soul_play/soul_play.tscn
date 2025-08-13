@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=3 uid="uid://bd7a7keq6x0ss"]
+
+[ext_resource type="Script" uid="uid://bfqgnm1qit7fg" path="res://soul_play/soul_play.gd" id="1_osqki"]
+[ext_resource type="FontFile" uid="uid://bn2dk54tqe0m5" path="res://fonts/PixelifySans-Regular.ttf" id="2_osqki"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ohhmi"]
+bg_color = Color(0.129412, 0.14902, 0.192157, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4c8eq"]
+bg_color = Color(0.506224, 0.545972, 0.630359, 1)
+
+[sub_resource type="GDScript" id="GDScript_df4s4"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_osqki")
+
+[node name="Background" type="Panel" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(29.08, 16.56)
+theme_override_styles/panel = SubResource("StyleBoxFlat_ohhmi")
+
+[node name="Chat Log" type="Panel" parent="."]
+offset_left = -8.0
+offset_top = 454.0
+offset_right = 32.0
+offset_bottom = 494.0
+scale = Vector2(29.1977, 5.07372)
+theme_override_styles/panel = SubResource("StyleBoxFlat_4c8eq")
+script = SubResource("GDScript_df4s4")
+
+[node name="Chat" type="Label" parent="."]
+offset_left = 35.0
+offset_top = 494.0
+offset_right = 112.0
+offset_bottom = 517.0
+theme_override_colors/font_color = Color(0.129412, 0.14902, 0.192157, 1)
+theme_override_fonts/font = ExtResource("2_osqki")
+theme_override_font_sizes/font_size = 35
+text = "blah blah!"

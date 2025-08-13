@@ -139,10 +139,10 @@ libraries = {
 autoplay = "menu_background"
 
 [node name="Title" type="Label" parent="."]
-offset_left = 350.0
-offset_top = 137.0
-offset_right = 799.0
-offset_bottom = 282.0
+offset_left = 337.0
+offset_top = 160.0
+offset_right = 786.0
+offset_bottom = 305.0
 theme_override_colors/font_color = Color(0.635548, 0.672457, 0.7455, 1)
 theme_override_fonts/font = ExtResource("6_s8mfa")
 theme_override_font_sizes/font_size = 100
@@ -155,10 +155,10 @@ libraries = {
 autoplay = "title bob"
 
 [node name="Subtitle" type="Label" parent="."]
-offset_left = 350.0
-offset_top = 137.0
-offset_right = 836.0
-offset_bottom = 282.0
+offset_left = 334.0
+offset_top = 270.0
+offset_right = 820.0
+offset_bottom = 415.0
 theme_override_colors/font_color = Color(0.393146, 0.432645, 0.511415, 1)
 theme_override_fonts/font = ExtResource("6_s8mfa")
 theme_override_font_sizes/font_size = 40
