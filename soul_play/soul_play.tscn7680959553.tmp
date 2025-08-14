@@ -103,7 +103,3 @@ theme_override_colors/font_color = Color(0.686093, 0.71759, 0.783255, 1)
 theme_override_fonts/font = ExtResource("2_osqki")
 theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxFlat_df4s4")
-
-[node name="Souls" type="Label" parent="."]
-offset_right = 40.0
-offset_bottom = 23.0
