@@ -1,6 +1,7 @@
 extends Button
 
 func _on_button_pressed():
+	AudioManager.play_button_sound()
 	$"../ColorRect".modulate.a = 0.0
 	
 	var tween = create_tween()
